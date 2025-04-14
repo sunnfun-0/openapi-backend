@@ -1,12 +1,16 @@
 package com.openapi.biz.model.dto.interfaceinfo;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import org.hibernate.validator.constraints.Range;
 
 @Data
 public class InterfaceInfoAddDTO {
+
+    /**
+     * 主键
+     */
+    private Long id;
 
     /**
      * 名称
@@ -38,7 +42,6 @@ public class InterfaceInfoAddDTO {
     /**
      * 接口状态（0-关闭，1-开启）
      */
-    @NotNull
     @Range(min = 0, max = 1, message = "接口状态只能为0或1")
     private Integer status;
 
